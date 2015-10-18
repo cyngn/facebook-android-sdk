@@ -577,13 +577,11 @@ public class LoginButton extends Button {
      *         authorization request for this Session.
      * @see Session#onActivityResult(Activity, int, int, Intent)
      */
-    public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Session session = sessionTracker.getSession();
         if (session != null) {
-            return session.onActivityResult((Activity)getContext(), requestCode,
+            session.onActivityResult((Activity)getContext(), requestCode,
                     resultCode, data);
-        } else {
-            return false;
         }
     }
 
